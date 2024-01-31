@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-let todoSchema=new Schema({
+let todoSchema=new mongoose.Schema({
     task:{
         type:String
     },
@@ -8,7 +8,6 @@ let todoSchema=new Schema({
         type:Boolean
     }
 })
-
 
 
 

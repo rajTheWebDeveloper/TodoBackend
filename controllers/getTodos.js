@@ -1,8 +1,10 @@
 import express from 'express'
+import Todo from '../models/todo.js'
 
-let getTodos=(req,res)=>
+let getTodos=async (req,res)=>
 {
-    return res.send("Anti Natalism is the only solution to everything")
+    let allTodos=await Todo.find({})
+    return res.send({success:true,data:allTodos})
 }
 
 

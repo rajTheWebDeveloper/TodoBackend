@@ -2,14 +2,19 @@ import express from 'express'
 import env from 'dotenv'
 import connect from './connect.js'
 import TodoRoutes from './routes/todo.js'
+import cors from 'cors'
+
 
 let app=express()
 env.config({
     path:'./config/.env'
 });
+app.use(cors());
 app.use(express.json())
 
+
 app.use('/todo',TodoRoutes)
+
 
 let PORT= process.env.PORT || 8000
 
